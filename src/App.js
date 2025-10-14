@@ -7,12 +7,12 @@ import AboutPage from './components/about/AboutPage';
 import PupilsPage from './components/pupil/PupilsPage';
 import ContactPage from './components/homepage/ContactPage';
 import AdminDashboard from './components/homepage/AdminDashboard';
-import RequireAdmin from './components/homepage/RequireAdmin';
-import PupilList from './components/pupil/PupilList';
+//import RequireAdmin from './components/homepage/RequireAdmin';
 import PupilFullProfile from './components/pupil/PupilFullProfile';
 import AboutPageDE from './components/about/AboutPageDE';
 import AboutPageIG from './components/about/AboutPageIG';
 import PupilViewPage from './components/pupil/PupilViewpage';
+import PupilList from "./components/pupil/PupilList";
 
 
 function App() {

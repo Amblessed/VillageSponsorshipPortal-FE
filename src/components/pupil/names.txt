@@ -1,0 +1,18 @@
+igbo_girl_names = ["Adaeze", "Chiamaka", "Oluchi", "Amarachi", "Ifunanya", "Ngozi", "Chinaza", "Ezinne", "Ifeoma", "Uchechi",
+                   "Ogechukwu", "Chidera", "Nkechi", "Onyinye", "Chidimma", "Nkemdilim", "Chioma", "Kosisochukwu", "Somtochukwu",
+                   "Obianuju", "Nneka", "Adanna", "Ogechi", "Ihuoma","Chizoba", "Ugonna","Amaka", "Munachi", "Uloaku","Nwabugo",
+                   "Eberechukwu", "Ijeoma", "Chinyere", "Chinenyenwa", "Chinonso", "Chigaemezu", "Chinwe"]
+
+igbo_boy_names = ["Chukwudi", "Ifeanyi", "Obinna", "Emeka", "Chinedu", "Ikenna", "Nonso", "Chibuike", "Uchenna", "Somtochukwu",
+                  "Ebuka", "Chigozie", "Tochukwu", "Kelechi", "Chisom", "Okechukwu", "Ugochukwu", "Nnamdi", "Chukwuma", "Izuchukwu",
+                  "Onyeka", "Kosisochukwu", "Chukwuka", "Arinze", "Ekene", "Obioma", "Olisaemeka", "Chijioke", "Nwachukwu", "Amarachi"]
+
+igbo_surnames = ["Okafor", "Nwosu", "Eze","Okeke", "Obi", "Nwachukwu", "Ibe", "Anyanwu",  "Uche", "Onwuchekwa", "Ezeh", "Chukwu",
+                 "Nwankwo", "Iwu", "Okwuosa", "Onoh", "Umeh", "Ofor", "Mba", "Nduka", "Okoro", "Nnamani", "Odogwu", "Onyeka", "Nzekwe",
+                 "Iheanacho", "Edochie", "Ekezie", "Uzoma", "Nnaji"]
+
+
+
+Pay attention to your life. Pay attention to what you do, how you think, and where you are—because every situation you’re in is not random.
+Everything happens for a reason.
+Nothing in this world unfolds without meaning or purpose.

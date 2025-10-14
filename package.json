@@ -12,6 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "apexcharts": "^5.3.5",
     "axios": "^1.12.2",
+    "openai": "^6.3.0",
+    "pdfmake": "^0.2.20",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-apexcharts": "^1.7.0",
