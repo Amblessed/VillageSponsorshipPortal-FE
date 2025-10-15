@@ -76,7 +76,7 @@ const PupilViewPage = () => {
             {/* Pupil Photo and Info */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
                 <img
-                    src={`http://localhost:8080/api/pupils/photo?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
+                    src={`${process.env.REACT_APP_API_BASE_URL}/api/pupils/photo?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
                     alt={`${pupil.firstName} ${pupil.lastName}`}
                     className="w-full max-w-xs md:w-64 md:h-64 object-cover rounded shadow"
                 />
