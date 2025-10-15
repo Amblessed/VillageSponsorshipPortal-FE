@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import EditTermPaymentForm from "../termpayment/EditTermPaymentForm";
 import GradeViewerModal from "../grade/GradeViewerModal";
 import PupilProgressionTable from "../pupilprogression/PupilProgressionTable";
+import formatClassLabel from "../../utils/classLevelUtils";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
@@ -82,7 +83,7 @@ const PupilViewPage = () => {
                 />
                 <div className="flex-1 space-y-2">
                     <p><strong>Age:</strong> {`${calculateAge(pupil.birthDate)} year${calculateAge(pupil.birthDate) === 1 ? '' : 's'}`}</p>
-                    <p><strong>Class:</strong> {pupil.classLevel}</p>
+                    <p><strong>Class:</strong> {formatClassLabel(pupil.classLevel)}</p>
                     <p><strong>Village:</strong> {pupil.village}</p>
                     <p><strong>Registration Date:</strong> {pupil.registrationDate}</p>
                     <p><strong>Sponsored:</strong> {pupil.sponsored ? 'Yes' : 'No'}</p>
