@@ -99,7 +99,7 @@ function PupilForm() {
 
             console.log(payload)
             await api.post("/api/pupils", payload, {
-                headers: {"Content-Type": "multipart/form-data"}
+                // headers: {"Content-Type": "multipart/form-data"}
             });
 
             setSuccess(true);
@@ -163,12 +163,12 @@ function PupilForm() {
                         <h3 className="text-lg font-semibold text-green-700 border-b pb-1">👶 Child’s Details</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <input name="firstName" value={formData.firstName} onChange={handleChange}
-                                   placeholder="First Name" className="border rounded px-3 py-2 w-full text-sm"/>
+                                   placeholder="First Name" className="border rounded px-3 py-2 w-full text-sm" required/>
                             <input name="middleName" value={formData.middleName} onChange={handleChange}
                                    placeholder="Middle Name (optional)"
                                    className="border rounded px-3 py-2 w-full text-sm"/>
                             <input name="lastName" value={formData.lastName} onChange={handleChange}
-                                   placeholder="Last Name" className="border rounded px-3 py-2 w-full text-sm"/>
+                                   placeholder="Last Name" className="border rounded px-3 py-2 w-full text-sm" required/>
                             <input name="birthDate" type="date" value={formData.birthDate} onChange={handleChange}
                                    className="border rounded px-3 py-2 w-full text-sm"/>
                             <select name="gender" value={formData.gender} onChange={handleChange}
