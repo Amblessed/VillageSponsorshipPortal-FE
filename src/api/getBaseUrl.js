@@ -12,7 +12,8 @@ export function getBaseUrl() {
 
     // Add more dev domains if needed
     if (hostname.includes("vercel.app")) {
-        return "https://village-sponsorship-portal-backend.up.railway.app"; // Production backend
+        //return "https://village-sponsorship-portal-backend.up.railway.app"; // Production backend
+        return process.env.REACT_APP_API_BASE_URL; // Production backend
     }
 
     // Default fallback
