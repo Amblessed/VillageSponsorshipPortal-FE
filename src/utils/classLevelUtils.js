@@ -37,3 +37,16 @@ export const formatClassLabel = (value) => ({
     PRIMARY_FIVE: "Primary 5",
     PRIMARY_SIX: "Primary 6",
 }[value] || value);
+
+
+
+export const formatRelationship = (value) => ({
+    UNCLE: "Uncle",
+    AUNT: "Aunt",
+    BROTHER: "Brother",
+    SISTER: "Sister",
+    NEIGHBOR: "Neighbor",
+    COUSIN: "Cousin",
+    GRANDMOTHER: "Grandmother",
+    GRANDFATHER: "Grandfather",
+}[value] || value);

@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import EditTermPaymentForm from "../termpayment/EditTermPaymentForm";
 import GradeViewerModal from "../grade/GradeViewerModal";
 import PupilProgressionTable from "../pupilprogression/PupilProgressionTable";
-import {formatClassLabel} from "../../utils/classLevelUtils";
+import {formatClassLabel, formatRelationship} from "../../utils/classLevelUtils";
 import {getBaseUrl} from "../../api/getBaseUrl";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
@@ -128,7 +128,7 @@ const PupilViewPage = () => {
             {!pupil.parent && pupil.guardian && (
                 <div className="bg-white p-4 rounded shadow">
                     <p><strong>Full Name:</strong> {`${pupil.guardian.firstName} ${pupil.guardian.middleName ?? ''} ${pupil.guardian.lastName}`.trim()}</p>
-                    <p><strong>Relationship:</strong> {pupil.guardian.relationship}</p>
+                    <p><strong>Relationship:</strong> {formatRelationship(pupil.guardian.relationship)}</p>
                     <p><strong>Phone:</strong> {pupil.guardian.phoneNumber}</p>
                     <p><strong>Address:</strong> {pupil.guardian.address}</p>
                 </div>
