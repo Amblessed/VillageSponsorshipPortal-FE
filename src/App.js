@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import PupilForm from './components/pupil/PupilForm';
 import ThankYou from './components/ThankYou';
 import HomePage from './components/homepage/Homepage';
@@ -7,7 +7,6 @@ import AboutPage from './components/about/AboutPage';
 import PupilsPage from './components/pupil/PupilsPage';
 import ContactPage from './components/homepage/ContactPage';
 import AdminDashboard from './components/homepage/AdminDashboard';
-//import RequireAdmin from './components/homepage/RequireAdmin';
 import PupilFullProfile from './components/pupil/PupilFullProfile';
 import AboutPageDE from './components/about/AboutPageDE';
 import AboutPageIG from './components/about/AboutPageIG';
@@ -99,7 +98,6 @@ function App() {
       <Route path="/admin/pupils" element={<PupilList />} />
       <Route path="/pupil" element={<PupilViewPage />} />
 
-      {/* <Route path="/pupils/:id" element={<PupilFullProfile />} /> */}
       <Route path="/pupils/:id" element={<PupilFullProfile />} />
      {/*  <Route path="/admin" element={<RequireAdmin><AdminDashboard /></RequireAdmin>} /> */}
       <Route path="/mission" element={<MissionSection />} />

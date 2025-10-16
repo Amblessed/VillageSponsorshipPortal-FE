@@ -122,7 +122,7 @@ function PupilForm() {
     }, [success, navigate]);
 
     const toTitleCase = (str) =>
-        str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+        str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
     const villages = [
         "UMUNUMO", "UMUELEM", "UMUEYE", "UMUDISHI", "UMUEZEALACHUKWU",

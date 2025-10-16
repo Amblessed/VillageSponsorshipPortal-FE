@@ -62,6 +62,11 @@ export default function PupilList() {
         }
     };
 
+    //const toTitleCase = (str) =>
+       // str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+    const toTitleCase = (str) =>
+        str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
 
 
     const handleSave = async (updatedPupil) => {
@@ -103,7 +108,7 @@ export default function PupilList() {
                                 <td className="px-4 py-3">{pupil.middleName}</td>
                                 <td className="px-4 py-3">{pupil.lastName}</td>
                                 <td className="px-4 py-3">{pupil.birthDate}</td>
-                                <td className="px-4 py-3">{pupil.village}</td>
+                                <td className="px-4 py-3">{toTitleCase(pupil.village)}</td>
                                 <td className="px-4 py-3 space-x-2">
                                     <Link
                                         to={`/pupil?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
@@ -141,6 +146,11 @@ export default function PupilList() {
                 })}
                 </tbody>
             </table>
+
+            <div className="mt-8">
+                <a href="/" className="text-green-600 hover:text-green-800">← Back to Home</a>
+            </div>
         </div>
+
     );
 }

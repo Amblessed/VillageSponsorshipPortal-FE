@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 import EditTermPaymentForm from "../termpayment/EditTermPaymentForm";
 import GradeViewerModal from "../grade/GradeViewerModal";
 import PupilProgressionTable from "../pupilprogression/PupilProgressionTable";
-import formatClassLabel from "../../utils/classLevelUtils";
+import {formatClassLabel} from "../../utils/classLevelUtils";
+import {getBaseUrl} from "../../api/getBaseUrl";
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
@@ -13,6 +14,9 @@ const calculateAge = birthDate => {
     const today = new Date();
     return today.getFullYear() - birth.getFullYear();
 };
+
+const toTitleCase = (str) =>
+    str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
 
 const PupilViewPage = () => {
     const query = useQuery();
@@ -77,14 +81,14 @@ const PupilViewPage = () => {
             {/* Pupil Photo and Info */}
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
                 <img
-                    src={`${process.env.REACT_APP_API_BASE_URL}/api/pupils/photo?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
+                    src={`${getBaseUrl()}/api/pupils/photo?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
                     alt={`${pupil.firstName} ${pupil.lastName}`}
                     className="w-full max-w-xs md:w-64 md:h-64 object-cover rounded shadow"
                 />
                 <div className="flex-1 space-y-2">
                     <p><strong>Age:</strong> {`${calculateAge(pupil.birthDate)} year${calculateAge(pupil.birthDate) === 1 ? '' : 's'}`}</p>
                     <p><strong>Class:</strong> {formatClassLabel(pupil.classLevel)}</p>
-                    <p><strong>Village:</strong> {pupil.village}</p>
+                    <p><strong>Village:</strong> {toTitleCase(pupil.village)}</p>
                     <p><strong>Registration Date:</strong> {pupil.registrationDate}</p>
                     <p><strong>Sponsored:</strong> {pupil.sponsored ? 'Yes' : 'No'}</p>
                     <p className="mt-4 italic">"{pupil.story}"</p>
