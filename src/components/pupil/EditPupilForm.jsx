@@ -20,8 +20,10 @@ export default function EditPupilForm({ pupil, onCancel, onSave }) {
     };
 
     const [form, setForm] = useState(() => ({
+
         ...safePupil,
         payments: Array.isArray(safePupil.payments) ? safePupil.payments : [],
+
     }));
 
     const [showPaymentsEditor, setShowPaymentsEditor] = useState(false);
@@ -180,7 +182,7 @@ export default function EditPupilForm({ pupil, onCancel, onSave }) {
                     firstName={form.firstName}
                     lastName={form.lastName}
                     birthDate={form.birthDate}
-                    currentClassLevel={mapClassLabelToEnum(pupil.classLevel)}
+                    currentClassLevel={form.classLevel}
                     onAdd={(newGrade) => console.log("Grade added:", newGrade)}
                     onClose={() => setShowAddGradeModal(false)}
                 />
@@ -205,7 +207,6 @@ EditPupilForm.propTypes = {
         birthDate: PropTypes.string,
         village: PropTypes.string,
         classLevel: PropTypes.string,
-        classLevelLabel: PropTypes.string,
         payments: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.number,

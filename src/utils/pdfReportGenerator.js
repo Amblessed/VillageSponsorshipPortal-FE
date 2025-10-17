@@ -4,15 +4,35 @@ import {
     formatTerm,
     formatDescriptor,
     formatGradeLetter,
-    formatAssessment,
+    formatAssessment, formatTermEnum,
 } from "./gradeUtils";
-import { mapClassLabelToEnum } from "./classLevelUtils";
-// import { generateTeacherComment } from "./generateTeacherComment";
+import { formatClassLabel} from "./classLevelUtils";
+import { generateTeacherComment } from "./generateTeacherComment";
 
 pdfMake.vfs = pdfFonts.vfs;
 
+
+const formatBirthDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const year = date.getFullYear();
+
+    const getOrdinal = (n) => {
+        if (n > 3 && n < 21) return "th";
+        switch (n % 10) {
+            case 1: return "st";
+            case 2: return "nd";
+            case 3: return "rd";
+            default: return "th";
+        }
+    };
+
+    return `${day}${getOrdinal(day)} ${month}, ${year}`;
+};
+
 export async function generateTermReportPDF(grades, pupilInfo, term) {
-    const normalizedClass = mapClassLabelToEnum(pupilInfo.classLevel);
+    const normalizedClass = formatClassLabel(pupilInfo.classLevel);
     const allTerms = ["FIRST_TERM", "SECOND_TERM", "THIRD_TERM"];
     const name = `${pupilInfo.firstName} ${pupilInfo.lastName}`;
     const termLabel = formatTerm(term);
@@ -26,12 +46,14 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
         );
         const subjects = [...new Set(allTermGrades.map((g) => g.subject))];
         const descriptors = [...new Set(allTermGrades.map((g) => g.descriptor))];
-        // comment = await generateTeacherComment(name, "All Terms", subjects, descriptors);
+        const scores = [...new Set(allTermGrades.map((g) => g.scores))];
+        comment = await generateTeacherComment(name, "All Terms", subjects, scores, descriptors);
 
         groupedContent = allTerms.flatMap((t) => {
             const termGrades = grades
-                .filter((g) => g.classLevel === normalizedClass && g.term === t)
+                .filter((g) => g.classLevel === normalizedClass && g.term === formatTermEnum(t))
                 .sort((a, b) => a.subject.localeCompare(b.subject));
+
 
             return [
                 { text: formatTerm(t), style: "subheader", margin: [0, 10, 0, 5] },
@@ -40,7 +62,7 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
                     : {
                         table: {
                             headerRows: 1,
-                            widths: ["*", "*", "auto", "auto", "*", "*"],
+                            widths: ["*", "*", "auto", "auto", "*"],
                             body: [
                                 [
                                     { text: "Subject", style: "tableHeader" },
@@ -48,15 +70,13 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
                                     { text: "Score", style: "tableHeader" },
                                     { text: "Grade", style: "tableHeader" },
                                     { text: "Descriptor", style: "tableHeader" },
-                                    { text: "Comment", style: "tableHeader" },
                                 ],
                                 ...termGrades.map((g, i) => [
-                                    { text: g.subject, fillColor: i % 2 ? "#F3F4F6" : null },
-                                    { text: formatAssessment(g.assessmentType), fillColor: i % 2 ? "#F3F4F6" : null },
-                                    { text: g.score.toString(), fillColor: i % 2 ? "#F3F4F6" : null },
-                                    { text: formatGradeLetter(g.gradeLetter), fillColor: i % 2 ? "#F3F4F6" : null },
-                                    { text: formatDescriptor(g.descriptor), fillColor: i % 2 ? "#F3F4F6" : null },
-                                    { text: g.teacherComment || "", fillColor: i % 2 ? "#F3F4F6" : null },
+                                    { text: g.subject, fillColor: i % 2 ? "#F3F4F6" : null, alignment: "center"},
+                                    { text: formatAssessment(g.assessmentType), fillColor: i % 2 ? "#F3F4F6" : null, alignment: "center"},
+                                    { text: g.score.toString(), fillColor: i % 2 ? "#F3F4F6" : null, alignment: "center"},
+                                    { text: formatGradeLetter(g.gradeLetter), fillColor: i % 2 ? "#F3F4F6" : null, alignment: "center"},
+                                    { text: formatDescriptor(g.descriptor), fillColor: i % 2 ? "#F3F4F6" : null, alignment: "center"},
                                 ]),
                             ],
                         },
@@ -74,8 +94,9 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
             .sort((a, b) => a.subject.localeCompare(b.subject));
 
         const subjects = [...new Set(termGrades.map((g) => g.subject))];
+        const scores = [...new Set(termGrades.map((g) => g.scores))];
         const descriptors = [...new Set(termGrades.map((g) => g.descriptor))];
-        // comment = await generateTeacherComment(name, termLabel, subjects, descriptors);
+        comment = await generateTeacherComment(name, termLabel, subjects, scores, descriptors);
 
         groupedContent = [
             { text: formatTerm(term), style: "subheader", margin: [0, 10, 0, 5] },
@@ -92,7 +113,6 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
                                 { text: "Score", style: "tableHeader" },
                                 { text: "Grade", style: "tableHeader" },
                                 { text: "Descriptor", style: "tableHeader" },
-                                { text: "Comment", style: "tableHeader" },
                             ],
                             ...termGrades.map((g, i) => [
                                 { text: g.subject, fillColor: i % 2 ? "#F3F4F6" : null },
@@ -100,7 +120,6 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
                                 { text: g.score.toString(), fillColor: i % 2 ? "#F3F4F6" : null },
                                 { text: formatGradeLetter(g.gradeLetter), fillColor: i % 2 ? "#F3F4F6" : null },
                                 { text: formatDescriptor(g.descriptor), fillColor: i % 2 ? "#F3F4F6" : null },
-                                { text: g.teacherComment || "", fillColor: i % 2 ? "#F3F4F6" : null },
                             ]),
                         ],
                     },
@@ -120,7 +139,7 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
                 style: "schoolName",
             },
             {
-                text: `Academic Report – ${term === "ALL" ? "All Terms" : termLabel}`,
+                text: `Academic Report – ${term === "ALL" ? "Full Academic Year" : termLabel}`,
                 style: "header",
             },
             {
@@ -130,32 +149,41 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
             {
                 columns: [
                     { width: "*", text: `Name: ${pupilInfo.firstName} ${pupilInfo.lastName}` },
-                    { width: "*", text: `Birth Date: ${pupilInfo.birthDate}` },
+                    { width: "*", text: `Date of Birth: ${formatBirthDate(pupilInfo.birthDate)}` },
                 ],
             },
             {
                 columns: [
-                    { width: "*", text: `Class Level: ${pupilInfo.classLevel}` },
-                    { width: "*", text: `Term: ${term === "ALL" ? "All Terms" : termLabel}` },
+                    { width: "*", text: `Class: ${formatClassLabel(pupilInfo.classLevel)}` },
+                    { width: "*", text: `Term: ${term === "ALL" ? "1st – 3rd Terms" : termLabel}` },
                 ],
             },
             ...groupedContent,
             {
-                text: `Teacher's Comment: "Would be generated via call to OpenAI API"`,
-                margin: [0, 20, 0, 0],
+                text: [
+                    { text: "Teacher's Comment: ", bold: true },
+                    { text: comment }
+                ],
+                margin: [0, 20, 0, 0]
             },
             {
                 columns: [
                     {
-                        text: "____________________\nTeacher",
-                        alignment: "left",
-                        margin: [0, 30, 0, 0],
+                        width: "*",
+                        stack: [
+                            { text: "____________________", alignment: "center" },
+                            { text: "Teacher", alignment: "center", margin: [0, 4, 0, 0] }
+                        ],
+                        margin: [0, 30, 0, 0]
                     },
                     {
-                        text: "____________________\nHead of School",
-                        alignment: "right",
-                        margin: [0, 30, 0, 0],
-                    },
+                        width: "*",
+                        stack: [
+                            { text: "____________________", alignment: "center" },
+                            { text: "Head of School", alignment: "center", margin: [0, 4, 0, 0] }
+                        ],
+                        margin: [0, 30, 0, 0]
+                    }
                 ],
             },
         ],
@@ -181,10 +209,16 @@ export async function generateTermReportPDF(grades, pupilInfo, term) {
             },
             tableHeader: {
                 bold: true,
+                color: "#FFFFFF",
+                fillColor: "#1D4ED8",
+                alignment: "center",
+            }
+            /*tableHeader: {
+                bold: true,
                 color: "white",
                 fillColor: "#4F46E5",
                 alignment: "center",
-            },
+            },*/
         },
     };
 

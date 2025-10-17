@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import api from "../../api/axios";
-import {formatClassLabel,} from "../../utils/classLevelUtils";
+import {formatClassLabel} from "../../utils/classLevelUtils";
 import {calculateGradeLetter,} from "../../utils/gradeUtils";
 
 
@@ -21,6 +21,7 @@ export default function AddGradeModal({
         score: "",
         teacherComment: "",
     });
+
 
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -46,6 +47,7 @@ export default function AddGradeModal({
         };
 
         try {
+            console.log("Grade payload:", gradePayload.classLevel);
             await api.post("/api/grades/pupil", gradePayload, {
                 params: { firstName, lastName, birthDate },
             });

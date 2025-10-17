@@ -5,6 +5,14 @@ export const formatTerm = (term) => ({
     THIRD_TERM: "3rd Term",
 }[term] || term);
 
+
+export const formatTermEnum = (term) => ({
+    FIRST_TERM: "First-Term",
+    SECOND_TERM: "Second-Term",
+    THIRD_TERM: "Third-Term",
+}[term] || term);
+
+
 export const formatDescriptor = (desc) => ({
     EXCELLENT: "Excellent",
     VERY_GOOD: "Very Good",

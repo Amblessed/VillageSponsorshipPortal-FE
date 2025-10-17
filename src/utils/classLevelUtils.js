@@ -25,6 +25,9 @@ export const mapClassLabelToEnum = (label) => ({
     "Primary 6": "PRIMARY_SIX",
 }[label] || "");
 
+
+
+
 export const formatClassLabel = (value) => ({
     PRE_NURSERY: "Pre Nursery",
     NURSERY_ONE: "Nursery 1",
