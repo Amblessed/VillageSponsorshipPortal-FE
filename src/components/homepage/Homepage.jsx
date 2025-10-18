@@ -126,19 +126,27 @@ const HomePage = () => {
                 </a>
                 <a href="/pupils" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
                     <h3 className="text-xl font-bold text-gray-800">Meet Our Pupils</h3>
-                    <p className="text-gray-600 mt-2">See the children waiting for sponsorship</p>
+                    <p className="text-gray-600 mt-2">Meet the children whose journeys you can help shape</p>
+                </a>
+                <a href="/register" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 className="text-xl font-bold text-gray-800">Register Pupil</h3>
+                    <p className="text-gray-600 mt-2">Register a pupil to be seen, known, and supported with care</p>
+                </a>
+                <a href="/admin" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 className="text-xl font-bold text-gray-800">Admin Dashboard</h3>
+                    <p className="text-gray-600 mt-2">Admin Dashboard for maintenance</p>
+                </a>
+                <a href="/creations" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 className="text-xl font-bold text-gray-800">Pupil Creations</h3>
+                    <p className="text-gray-600 mt-2">Explore drawings, poems, and projects from our pupils</p>
                 </a>
                 <a href="/contact" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
                     <h3 className="text-xl font-bold text-gray-800">Contact Us</h3>
                     <p className="text-gray-600 mt-2">Reach out or visit our school</p>
                 </a>
-                <a href="/register" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <h3 className="text-xl font-bold text-gray-800">Register Child</h3>
-                    <p className="text-gray-600 mt-2">Submit a child’s profile for sponsorship</p>
-                </a>
-                <a href="/admin" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <h3 className="text-xl font-bold text-gray-800">Admin Dashboard</h3>
-                    <p className="text-gray-600 mt-2">Admin Dashboard for maintenance</p>
+                <a href="/donate" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h3 className="text-xl font-bold text-gray-800">Donate to Us</h3>
+                    <p className="text-gray-600 mt-2">See what areas you can donate</p>
                 </a>
             </section>
 

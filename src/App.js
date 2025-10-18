@@ -12,6 +12,7 @@ import AboutPageDE from './components/about/AboutPageDE';
 import AboutPageIG from './components/about/AboutPageIG';
 import PupilViewPage from './components/pupil/PupilViewpage';
 import PupilList from "./components/pupil/PupilList";
+import DonatePage from "./components/about/DonatePage";
 
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
       <Route path="/admin" element={<AdminDashboard />} />
       <Route path="/admin/pupils" element={<PupilList />} />
       <Route path="/pupil" element={<PupilViewPage />} />
+      <Route path="/donate" element={<DonatePage />} />
 
       <Route path="/pupils/:id" element={<PupilFullProfile />} />
      {/*  <Route path="/admin" element={<RequireAdmin><AdminDashboard /></RequireAdmin>} /> */}
