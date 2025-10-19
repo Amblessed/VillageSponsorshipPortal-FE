@@ -62,12 +62,8 @@ export default function PupilList() {
         }
     };
 
-    //const toTitleCase = (str) =>
-       // str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
     const toTitleCase = (str) =>
         str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-
-
 
     const handleSave = async (updatedPupil) => {
         try {
