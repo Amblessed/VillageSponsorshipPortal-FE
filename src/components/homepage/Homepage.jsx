@@ -149,7 +149,7 @@ const HomePage = () => {
                     <p className="text-gray-600 mt-2">See what areas you can donate</p>
                 </a>
                 <a href="/analytics" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                    <h3 className="text-xl font-bold text-gray-800">Sponsor Analytics</h3>
+                    <h3 className="text-xl font-bold text-gray-800">Analytics</h3>
                     <p className="text-gray-600 mt-2">Track pupil demographics, village reach, and where your support creates lasting impact</p>
                 </a>
             </section>

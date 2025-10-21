@@ -36,7 +36,8 @@ const Dashboard = ({ pupils }) => {
 
     const villageGenderMap = {};
 
-    pupils.forEach(p => {
+    for(const p of pupils)
+    {
         const village = p.village;
         const gender = p.gender;
 
@@ -46,7 +47,7 @@ const Dashboard = ({ pupils }) => {
 
         if (gender === 'MALE') villageGenderMap[village].MALE++;
         else if (gender === 'FEMALE') villageGenderMap[village].FEMALE++;
-    });
+    }
 
     const villageLabels = Object.keys(villageGenderMap);
     const maleCounts = villageLabels.map(v => villageGenderMap[v].MALE);
@@ -81,7 +82,7 @@ const Dashboard = ({ pupils }) => {
                     <h3 className="text-lg font-semibold mb-2">Village Representation</h3>
                     <Bar data={villageData} />
                 </div>
-                <div className="w-full mt-8">
+                <div className="w-[600px]">
                     <h3 className="text-lg font-semibold mb-2">Gender Distribution by Village</h3>
                     <Bar data={genderByVillageData} options={{ responsive: true, plugins: { legend: { position: 'top' } } }} />
                 </div>
