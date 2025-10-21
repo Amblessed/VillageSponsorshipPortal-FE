@@ -158,7 +158,7 @@ const DonatePage = ({ donationGoal = 12000000 }) => {
                             <img
                                 src={src}
                                 alt={`Urgency ${index + 1}`}
-                                className="w-full h-[1000px] object-cover rounded-lg shadow-md brightness-150"
+                                className="w-full h-[1000px] object-cover rounded-lg shadow-md transition duration-500 brightness-125"
                             />
                         </SwiperSlide>
                     ))}

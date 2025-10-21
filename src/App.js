@@ -14,6 +14,7 @@ import PupilViewPage from './components/pupil/PupilViewpage';
 import PupilList from "./components/pupil/PupilList";
 import DonatePage from "./components/donation/DonatePage";
 import DonorsPage from "./components/donation/DonorsPage";
+import DashboardContainer from './components/dashboard/DashboardContainer';
 
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
       <Route path="/pupil" element={<PupilViewPage />} />
       <Route path="/donate" element={<DonatePage />} />
       <Route path="/donors" element={<DonorsPage />} />
+      <Route path="/analytics" element={<DashboardContainer />} />
 
       <Route path="/pupils/:id" element={<PupilFullProfile />} />
      {/*  <Route path="/admin" element={<RequireAdmin><AdminDashboard /></RequireAdmin>} /> */}

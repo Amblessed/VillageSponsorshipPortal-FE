@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const calculateAge = birthDate => {
   const birth = new Date(birthDate);
@@ -12,7 +13,7 @@ const PupilCard = ({ pupil }) => {
       <div className="aspect-[4/3] w-full overflow-hidden rounded-t-lg">
         <img
         src={`http://localhost:8080/api/pupils/photo?firstName=${encodeURIComponent(pupil.firstName)}&lastName=${encodeURIComponent(pupil.lastName)}&birthDate=${pupil.birthDate}`}
-        alt={`${pupil.firstName}'s photo`}
+        alt={`${pupil.firstName}'s`}
         className="w-full h-80 object-cover" 
         /* className="w-full max-w-xs md:w-64 md:h-64 object-cover rounded shadow" */
         /* className="w-full max-w-xs md:max-w-none md:w-64 md:h-64 object-cover rounded shadow" */
@@ -23,7 +24,7 @@ const PupilCard = ({ pupil }) => {
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-800">{`${pupil.firstName} ${pupil.middleName} ${pupil.lastName}`}</h2>
         <p className="text-gray-600">Age: {calculateAge(pupil.birthDate)}</p>
-        <p className="text-gray-600">Class: {pupil.classLevelLabel}</p>
+        <p className="text-gray-600">Class: {pupil.classLevel}</p>
         <p className="text-gray-600">Village: {pupil.village}</p>
         {/* <p className="text-gray-600 mt-2 italic">“{pupil.story}”</p> */}
         <a
@@ -35,6 +36,18 @@ const PupilCard = ({ pupil }) => {
       </div>
     </div>
   );
+};
+
+
+PupilCard.propTypes = {
+    pupil: PropTypes.shape({
+        firstName: PropTypes.string.isRequired,
+        middleName: PropTypes.string,
+        lastName: PropTypes.string.isRequired,
+        birthDate: PropTypes.string.isRequired,
+        classLevel: PropTypes.string.isRequired,
+        village: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default PupilCard;
