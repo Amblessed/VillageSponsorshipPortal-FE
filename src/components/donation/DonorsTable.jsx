@@ -13,8 +13,8 @@ const DonorTable = ({ donors }) => (
             </tr>
             </thead>
             <tbody>
-            {donors.map((donor, index) => (
-                <tr key={index} className="border-t">
+            {donors.map((donor) => (
+                <tr key={donor.firstName + donor.lastName + donor.amount + donor.created_at} className="border-t">
                     <td className="px-4 py-2 font-medium">
                         {`${donor.salutation} ${donor.firstName} ${donor.middleName || ""} ${donor.lastName}`}
                     </td>
