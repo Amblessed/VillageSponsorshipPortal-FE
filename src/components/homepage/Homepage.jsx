@@ -1,42 +1,28 @@
 import React, {useState} from 'react';
-import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {ManifestoCard, manifestoStatements} from "../mission-manifesto/ManifestoCard";
 import WhyIBuild from "../mission-manifesto/WhyIBuild";
 import {portalTexts} from "./portaltext/portalTexts";
 import {MissionHeader} from "./missionHeader";
+import ImageCarousel from "./ImageCarousel";
 
 
 const HomePage = () => {
     const [language, setLanguage] = useState('en');
+    const imageCount = 11; // Set a high enough number
+    const images = Array.from({ length: imageCount }, (_, i) => `stdamian_${i + 1}.png`);
 
     return (
         <div className="min-h-screen flex flex-col">
             {/* Mission Header */}
             <MissionHeader language={language} setLanguage={setLanguage} />
 
+            <section className="bg-white py-12 px-4">
+                <ImageCarousel images={images} />
+            </section>
+
             {/* Hero Section */}
             <section className="bg-gradient-to-b from-teal-50 via-white to-green-100 py-12 px-4 text-center">
-                <div className="max-w-xl mx-auto overflow-hidden rounded shadow-lg">
-                    <Carousel
-                        autoPlay
-                        infiniteLoop
-                        showThumbs={false}
-                        showStatus={false}
-                        interval={4000}
-                        transitionTime={700}
-                    >
-                        {["children", "children_2", "children_3", "children_4"].map((img, index) => (
-                            <div key={index}>
-                                <img
-                                    src={`/images/${img}.jpg`}
-                                    alt={`Slide ${index + 1}`}
-                                    className="w-full h-80 sm:h-96 md:h-[26rem] object-cover rounded"
-                                />
-                            </div>
-                        ))}
-                    </Carousel>
-                </div>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-6">
                     {portalTexts[language].heading}
@@ -51,6 +37,7 @@ const HomePage = () => {
                     {portalTexts[language].button}
                 </a>
             </section>
+
 
             {/* Our Belief Manifesto Section - Side by Side */}
             <section className="bg-white py-16 px-6">

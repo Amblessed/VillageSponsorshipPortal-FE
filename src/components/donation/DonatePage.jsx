@@ -29,7 +29,7 @@ const DonatePage = () => {
         0
     );
 
-    const galleryImages = Array.from({ length: 20 }, (_, i) => {
+    const galleryImages = Array.from({ length: 18 }, (_, i) => {
         return `/images/wornout/classroom_${i}.png`;
     });
 

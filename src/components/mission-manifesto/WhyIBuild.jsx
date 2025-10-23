@@ -16,7 +16,7 @@ const WhyIBuild = ({ language }) => {
 
     const title = getTitle(language);
 
-    const speakText = () => {
+    /*const speakText = () => {
         if (typeof window === 'undefined' || !window.speechSynthesis) return;
         const utterance = new SpeechSynthesisUtterance(statement);
         const getLanguageCode = (lang) => {
@@ -41,7 +41,7 @@ const WhyIBuild = ({ language }) => {
 
     useEffect(() => {
         stopSpeaking(); // Stop narration when language changes
-    }, [language]);
+    }, [language]);*/
 
     return (
         <section className="bg-gray-50 py-16 px-6">
@@ -53,7 +53,7 @@ const WhyIBuild = ({ language }) => {
                 <p className="text-gray-700 whitespace-pre-line text-lg leading-relaxed font-serif">
                     {statement}
                 </p>
-                {<button
+                {/*{<button
                     onClick={isSpeaking ? stopSpeaking : speakText}
                     className="mt-6 inline-block px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 shadow"
                 >
@@ -68,7 +68,7 @@ const WhyIBuild = ({ language }) => {
                             : language === "de"
                                 ? "Erzählung abspielen"
                                 : "Gụọ okwu"}
-                </button>}
+                </button>}*/}
             </div>
         </section>
     );

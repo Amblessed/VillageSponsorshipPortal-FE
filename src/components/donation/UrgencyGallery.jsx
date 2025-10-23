@@ -25,7 +25,7 @@ export const UrgencyGallery = ({ galleryImages }) => (
                     <img
                         src={src}
                         alt={`Urgency ${index + 1}`}
-                        className="w-full h-[1000px] object-cover rounded-lg shadow-md transition duration-500 brightness-125"
+                        className="w-full h-[800px] object-cover rounded-lg shadow-md transition duration-500 brightness-125"
                     />
                 </SwiperSlide>
             ))}
