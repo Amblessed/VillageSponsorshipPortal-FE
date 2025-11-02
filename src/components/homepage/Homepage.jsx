@@ -3,6 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {portalTexts} from "./portaltext/portalTexts";
 import {MissionHeader} from "./missionHeader";
 import ImageCarousel from "./ImageCarousel";
+import {manifestoStatements, ManifestoCard} from "../mission-manifesto/ManifestoCard";
 
 
 const HomePage = () => {
