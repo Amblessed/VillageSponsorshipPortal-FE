@@ -23,7 +23,7 @@ const helpItems = [
 
 const actionLinks = [
     { href: "/sponsor", label: "Sponsor a Child", color: "bg-green-600 hover:bg-green-700" },
-    { href: "/donate", label: "Give a Gift", color: "bg-blue-600 hover:bg-blue-700" },
+    { href: "/donate", label: "Donate to us", color: "bg-blue-600 hover:bg-blue-700" },
     { href: "/learn-more", label: "Learn More", color: "bg-gray-600 hover:bg-gray-700" },
 ];
 
@@ -57,23 +57,41 @@ const AboutPage = () => {
                 />
 
                 <Section title="🎓 Our Mission">
-                    <ul className="list-disc list-inside text-gray-700 space-y-1">
-                        {missionItems.map((item) => (
-                            <li key={item.title}>
-                                <strong>{item.title}</strong> – {item.text}
+                    <div className="text-gray-700 space-y-4">
+                        <p>
+                            A child’s future is not a distant dream—it is a seed waiting for water.
+                        </p>
+                        <p>
+                            Education is more than knowledge. It is dignity restored, confidence awakened,
+                            and the quiet courage to walk into tomorrow with strength.
+                        </p>
+                        <p>
+                            Yet in too many villages, this path is blocked—not by lack of potential,
+                            but by poverty. Not by unwillingness, but by circumstance.
+                        </p>
+                        <p>We respond with:</p>
+                        <ul className="list-none space-y-2">
+                            <li>
+                                📚 <strong>Quality Education</strong> – Teaching reading, math, and critical thinking for lifelong empowerment.
                             </li>
-                        ))}
-                    </ul>
-                    <p className="text-gray-700 mt-2">
-                        Education here is more than knowledge—it is a seed of hope, planted in young lives and
-                        destined to change entire communities.
-                    </p>
+                            <li>
+                                💛 <strong>Values Formation</strong> – Cultivating courage, respect, and kindness to shape character and community.
+                            </li>
+                            <li>
+                                🤝 <strong>Compassionate Care</strong> – Surrounding every child with love, dignity, and the support they deserve.
+                            </li>
+                        </ul>
+                        <p>
+                            Here, education is not just instruction—it is a seed of hope, planted in young lives
+                            and destined to transform entire communities.
+                        </p>
+                    </div>
                 </Section>
 
                 <Section
                     title="🤝 A Circle of Care"
                     paragraphs={[
-                        "Behind every student is a community of parents, teachers, and sponsors working together. Many families face significant challenges, but their resilience is met with support that spans continents.",
+                        "Behind every pupil is a community of parents, teachers, and sponsors working together. Many families face significant challenges, but their resilience is met with support that spans continents.",
                         "Through sponsorship, children gain not just education but the assurance that someone believes in them. For donors, it is an invitation to witness transformation firsthand and take part in writing new stories of possibility.",
                     ]}
                 />
@@ -90,7 +108,7 @@ const AboutPage = () => {
                 <Section title="✨ How You Can Help">
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
                         {helpItems.map((item, i) => (
-                            <li key={i}>{item}</li>
+                            <li key={i + {item}}>{item}</li>
                         ))}
                     </ul>
                     <p className="text-gray-700 mt-2">
@@ -121,7 +139,7 @@ const Section = ({ title, paragraphs = [], children, italicFirst = false }) => (
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
         {paragraphs.map((text, i) => (
             <p
-                key={i}
+                key={i + {text}}
                 className={`text-gray-700 ${i === 0 && italicFirst ? "italic" : ""} ${
                     i > 0 ? "mt-2" : ""
                 }`}

@@ -70,5 +70,5 @@ export const formatDate = (timestamp) => {
         }
     };
 
-    return `${getOrdinal(day)}, ${month} ${year}`;
+    return `${getOrdinal(day)} ${month}, ${year}`;
 };

@@ -23,17 +23,35 @@ const AboutPageDE = () => {
           </p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">🎓 Unsere Mission</h2>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li><strong>Qualitätsbildung</strong> – Lesen, Mathematik und wichtige Fähigkeiten lehren.</li>
-            <li><strong>Wertevermittlung</strong> – Mut, Respekt und Freundlichkeit fördern.</li>
-            <li><strong>Mitfühlende Fürsorge</strong> – Jedes Kind mit Liebe und Würde umgeben.</li>
-          </ul>
-          <p className="text-gray-700 mt-2">
-            Bildung ist hier mehr als Wissen – sie ist ein Hoffnungssamen, gepflanzt in junge Leben und bestimmt, ganze Gemeinschaften zu verändern.
-          </p>
-        </section>
+          <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">🎓 Unsere Mission</h2>
+              <div className="text-gray-700 space-y-4">
+                  <p>
+                      Die Zukunft eines Kindes ist kein ferner Traum – sie ist ein Same, der auf Wasser wartet.
+                      Bildung ist mehr als Wissen. Sie ist Würde, wiederhergestellt. Selbstvertrauen, geweckt.
+                      Und der stille Mut, mit Stärke in das Morgen zu gehen.
+                  </p>
+                  <p>
+                      Doch in vielen Dörfern ist dieser Weg versperrt – nicht durch fehlendes Potenzial,
+                      sondern durch Armut. Nicht durch Unwillen, sondern durch Umstände.
+                  </p>
+                  <ul className="list-disc list-inside space-y-2">
+                      <li>
+                          <strong>Qualitätsbildung</strong> – Lesen, Mathematik und wichtige Fähigkeiten lehren.
+                      </li>
+                      <li>
+                          <strong>Wertevermittlung</strong> – Mut, Respekt und Freundlichkeit fördern.
+                      </li>
+                      <li>
+                          <strong>Mitfühlende Fürsorge</strong> – Jedes Kind mit Liebe und Würde umgeben.
+                      </li>
+                  </ul>
+                  <p>
+                      Bildung ist hier mehr als Wissen – sie ist ein Hoffnungssamen,
+                      gepflanzt in junge Leben und bestimmt, ganze Gemeinschaften zu verändern.
+                  </p>
+              </div>
+          </section>
 
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mb-2">🤝 Ein Kreis der Fürsorge</h2>

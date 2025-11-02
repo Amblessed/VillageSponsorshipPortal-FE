@@ -38,7 +38,11 @@ const DonorsPage = () => {
 
             {/* 👇 Back to Donate Page Link */}
             <div className="mt-8">
-                <a href="/donate" className="text-green-600 hover:text-green-800 text-sm underline">
+                <a
+                    href="/donate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:text-green-800 text-sm underline">
                     ← Back to Donate Page
                 </a>
             </div>

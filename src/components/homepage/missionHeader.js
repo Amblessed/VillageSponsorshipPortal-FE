@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-const missionStatements = {
+const missionstatements = {
     en: "We believe every child deserves love, learning, and a future filled with hope. Through education and community support, we nurture dignity, purpose, and joy.",
     de: "Wir glauben, dass jedes Kind Liebe, Bildung und eine hoffnungsvolle Zukunft verdient. Durch Bildung und gemeinschaftliche Unterstützung fördern wir Würde, Sinn und Freude.",
     ig: "Anyị kwenyere na nwa ọ bụla kwesịrị ịhụnanya, mmụta, na ọdịnihu jupụtara na olileanya. Site n’akwụkwọ na nkwado obodo, anyị na-akwalite nsọpụrụ, ebumnuche, na ọṅụ."
 };
 
-export const MissionHeader = ({language, setLanguage}) => {
+export const MissionHeader = ({ language, setLanguage }) => {
     return (
         <header className="text-center py-8 bg-gradient-to-r from-blue-100 via-blue-50 to-teal-100">
             <h1 className="text-3xl font-bold text-gray-800">St. Damian Nursery and Primary School, Amandugba</h1>
@@ -14,7 +15,7 @@ export const MissionHeader = ({language, setLanguage}) => {
                 key={language + "-mission"}
                 className="text-lg text-gray-700 mt-2 max-w-3xl mx-auto whitespace-pre-line transition-opacity duration-700 opacity-100"
             >
-                {missionStatements[language]}
+                {missionstatements[language]}
             </p>
             <div className="mt-4 flex justify-center space-x-4">
                 <button
@@ -41,4 +42,9 @@ export const MissionHeader = ({language, setLanguage}) => {
             </div>
         </header>
     );
+};
+
+MissionHeader.propTypes = {
+    language: PropTypes.oneOf(['en', 'de', 'ig']).isRequired,
+    setLanguage: PropTypes.func.isRequired
 };

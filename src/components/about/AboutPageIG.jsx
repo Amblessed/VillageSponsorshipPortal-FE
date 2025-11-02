@@ -23,17 +23,35 @@ const AboutPageIG = () => {
           </p>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">🎓 Ebumnuche Anyị</h2>
-          <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li><strong>Agụmakwụkwọ Dị Mma</strong> – Ịkụziri igụ, mgbakọ na mwepụ, na nkà dị mkpa.</li>
-            <li><strong>Mmụta Omume</strong> – Ịkụziri obi ike, nsọpụrụ, na ebere.</li>
-            <li><strong>Nlekọta N’ebe Obi Dị</strong> – Ịg surrounded ụmụaka na ịhụnanya na ịdị nsọ.</li>
-          </ul>
-          <p className="text-gray-700 mt-2">
-            Agụmakwụkwọ ebe a karịrị ihe ọmụma—ọ bụ mkpụrụ olileanya, akụrụ n’ime ndụ ụmụaka, nke ga-agbanwe obodo dum.
-          </p>
-        </section>
+          <section>
+              <h2 className="text-xl font-semibold text-gray-800 mb-2">🎓 Ebumnuche Anyị</h2>
+              <div className="text-gray-700 space-y-4">
+                  <p>
+                      Ọdịnihu nwa abụghị nrọ dị anya – ọ bụ mkpụrụ na-achọ mmiri.
+                      Agụmakwụkwọ karịrị akwụkwọ na klas. Ọ bụ nsọpụrụ e weghachiri,
+                      ntụkwasị obi e kpaliri, na obi ike dị jụụ iji banye echi n’ike.
+                  </p>
+                  <p>
+                      Ma n’obodo ndị dị iche iche, ụzọ a mechiri – ọ bụghị n’ihi na nwa enweghị ike,
+                      kama n’ihi ụkọ ego. Ọ bụghị n’ihi na ezinụlọ achọghị, kama n’ihi ọnọdụ.
+                  </p>
+                  <ul className="list-disc list-inside space-y-2">
+                      <li>
+                          <strong>Agụmakwụkwọ Dị Mma</strong> – Ịkụziri igụ, mgbakọ na mwepụ, na nkà dị mkpa.
+                      </li>
+                      <li>
+                          <strong>Mmụta Omume</strong> – Ịkụziri obi ike, nsọpụrụ, na ebere.
+                      </li>
+                      <li>
+                          <strong>Nlekọta N’ebe Obi Dị</strong> – Ịgụrụ ụmụaka gburugburu ịhụnanya na ịdị nsọ.
+                      </li>
+                  </ul>
+                  <p>
+                      Agụmakwụkwọ ebe a karịrị ihe ọmụma—ọ bụ mkpụrụ olileanya,
+                      akụrụ n’ime ndụ ụmụaka, nke ga-agbanwe obodo dum.
+                  </p>
+              </div>
+          </section>
 
         <section>
           <h2 className="text-xl font-semibold text-gray-800 mb-2">🤝 Ọgbọ Nlekọta</h2>

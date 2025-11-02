@@ -169,8 +169,14 @@ function PupilForm() {
                                    className="border rounded px-3 py-2 w-full text-sm"/>
                             <input name="lastName" value={formData.lastName} onChange={handleChange}
                                    placeholder="Last Name" className="border rounded px-3 py-2 w-full text-sm" required/>
-                            <input name="birthDate" type="date" value={formData.birthDate} onChange={handleChange}
-                                   className="border rounded px-3 py-2 w-full text-sm"/>
+                            <div>
+                                <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700">
+                                    Date of Birth
+                                </label>
+                                <input name="birthDate" type="date" value={formData.birthDate} onChange={handleChange}
+                                       className="border rounded px-3 py-2 w-full text-sm"/>
+                            </div>
+
                             <select name="gender" value={formData.gender} onChange={handleChange}
                                     className="border rounded px-3 py-2 w-full text-sm">
                                 <option value="MALE">Male</option>

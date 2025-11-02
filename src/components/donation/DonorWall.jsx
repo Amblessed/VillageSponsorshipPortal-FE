@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import {formatDate} from "../../utils/classLevelUtils";
+import { Link } from 'react-router-dom';
 
 
 export const DonorWall = ({ recentDonors }) => (
@@ -34,9 +35,9 @@ export const DonorWall = ({ recentDonors }) => (
             <p className="text-gray-600 text-center">No donations yet. Be the first to give!</p>
         )}
         <p className="text-sm text-center mt-4">
-            <a href="/donors" className="text-purple-600 underline hover:text-purple-800">
+            <Link to="/donors" className="text-purple-600 underline hover:text-purple-800">
                 View all donors →
-            </a>
+            </Link>
         </p>
         <div className="mt-6 text-center">
             <p className="text-green-700 font-semibold text-base lg:text-lg">💚 Join them and make a lasting impact!</p>

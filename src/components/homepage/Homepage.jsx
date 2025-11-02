@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import {ManifestoCard, manifestoStatements} from "../mission-manifesto/ManifestoCard";
-import WhyIBuild from "../mission-manifesto/WhyIBuild";
 import {portalTexts} from "./portaltext/portalTexts";
 import {MissionHeader} from "./missionHeader";
 import ImageCarousel from "./ImageCarousel";
@@ -32,6 +30,8 @@ const HomePage = () => {
                 </p>
                 <a
                     href="/sponsor"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-6 inline-block px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 shadow"
                 >
                     {portalTexts[language].button}
@@ -61,8 +61,8 @@ const HomePage = () => {
             </section>
 
 
-            {/* Why I Build Section with Parallax */}
-            <WhyIBuild language={language}/>
+           {/*  Why I Build Section with Parallax
+            <WhyIBuild language={language}/>*/}
 
             {/* Quick Links */}
             <section
