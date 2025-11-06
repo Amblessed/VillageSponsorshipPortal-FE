@@ -1,0 +1,46 @@
+{
+  "phase1": [
+    {
+      "area": "Classroom Repairs",
+      "amount": 3500000,
+      "purpose": "Roofing, walls, floors, blackboards"
+    },
+    {
+      "area": "School Benches/Desks",
+      "amount": 3500000,
+      "purpose": "70 benches/desk @ ₦40,000 each (plus logistics: 200k)"
+    },
+    {
+      "area": "Toilets & Sanitation",
+      "amount": 500000,
+      "purpose": "Basic hygiene & first-aid toolkits for children"
+    },
+    {
+      "area": "School Supplies",
+      "amount": 500000,
+      "purpose": "Books, pens, chalk, teaching aids"
+    },
+    {
+      "area": "Teacher Appreciation",
+      "amount": 250000,
+      "purpose": "Gifts or stipends for teachers"
+    }
+  ],
+  "phase2": [
+    {
+      "area": "Renovated Library Space",
+      "amount": 2000000,
+      "purpose": "A place to read, grow, and dream"
+    },
+    {
+      "area": "Solar Power Installation",
+      "amount": 4250000,
+      "purpose": "Electricity for learning and safety"
+    },
+    {
+      "area": "ICT Room Setup",
+      "amount": 3500000,
+      "purpose": "Basic computers for digital literacy"
+    }
+  ]
+}

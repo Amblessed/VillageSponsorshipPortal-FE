@@ -1,8 +1,8 @@
-// src/hooks/useDonationData.js
+// src/hooks/DonationData.jsx
 import { useEffect, useState } from "react";
 import api from "../../api/axios";
 
-export const useDonationData = () => {
+const DonationData = () => {
     const [totalDonated, setTotalDonated] = useState(0);
     const [recentDonors, setRecentDonors] = useState([]);
 
@@ -31,3 +31,5 @@ export const useDonationData = () => {
 
     return { totalDonated, recentDonors };
 };
+
+export default DonationData;

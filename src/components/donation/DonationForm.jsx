@@ -5,20 +5,6 @@ const DonationForm = ({ formData, setFormData, loading, handleSubmit }) => (
     <div className="bg-white shadow rounded-xl p-6 w-full max-w-4xl">
         <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">💖 Make a Donation</h2>
 
-        {/* Tiered Giving Buttons */}
-        {/*<div className="flex flex-wrap gap-2 justify-center mb-6">
-            {[5000, 10000, 25000, 50000, 100000].map((amt) => (
-                <button
-                    key={amt}
-                    type="button"
-                    onClick={() => setFormData({ ...formData, amount: amt.toString() })}
-                    className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full hover:bg-purple-200 transition"
-                >
-                    ₦{amt.toLocaleString()}
-                </button>
-            ))}
-        </div>
-*/}
         <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <select

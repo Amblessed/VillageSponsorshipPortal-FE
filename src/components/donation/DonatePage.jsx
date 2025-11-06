@@ -2,14 +2,14 @@ import React, { useState, useCallback } from "react";
 import api from "../../api/axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DonationTable from "./DonationTable";
 import DonationForm from "./DonationForm";
 import {ProgressBar} from "./ProgressBar";
 import {UrgencyGallery} from "./UrgencyGallery";
 import {DonorWall} from "./DonorWall";
 import {Header} from "./Header";
 import { phase1Data, phase2Data } from "./donationPhases";
-import { useDonationData } from "./useDonationData";
+import DonationData from "./DonationData";
+import GivingPlanSection from "./GivingPlanSection";
 
 const DonatePage = () => {
     const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ const DonatePage = () => {
     });
 
     const [loading, setLoading] = useState(false);
-    const { totalDonated, recentDonors } = useDonationData();
+    const { totalDonated, recentDonors } = DonationData();
     const donationGoal = [...phase1Data, ...phase2Data].reduce(
         (total, item) => total + item.amount,
         0
@@ -80,8 +80,7 @@ const DonatePage = () => {
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
                 {/* Left: Tables + Form */}
                 <div className="lg:col-span-2 space-y-10">
-                    <DonationTable title="📊 Phase 1: Immediate Impact" data={phase1Data} />
-                    <DonationTable title="📈 Phase 2: Long-Term Vision" data={phase2Data} />
+                    <GivingPlanSection />
                     <DonationForm
                         formData={formData}
                         setFormData={setFormData}
