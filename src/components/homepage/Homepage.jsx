@@ -61,10 +61,6 @@ const HomePage = () => {
                 </div>
             </section>
 
-
-           {/*  Why I Build Section with Parallax
-            <WhyIBuild language={language}/>*/}
-
             {/* Quick Links */}
             <section
                 className="bg-gradient-to-r from-yellow-50 via-pink-50 to-purple-50 py-10 px-4 grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
